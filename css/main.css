@@ -1,9 +1,15 @@
-body{
+body {
     margin: 0;
     font-family: "Comic Sans MS", "sans-serif";
 }
 
-p, blockquote {
+.content-main {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+p,
+blockquote {
     font-size: .9em;
     line-height: 1.6em;
 }
@@ -16,11 +22,12 @@ ul {
 
 .container {
     text-align: center;
-    padding: .8em  1.2em;
+    /* padding: .8em  1.2em; */
 }
 
 .logo {
     width: 130px;
+    height: 42px;
 }
 
 .hide-mobile {
@@ -30,6 +37,7 @@ ul {
 header {
     display: flex;
     justify-content: space-between;
+    background-color: #ebebeb;
 }
 
 .menu {
@@ -42,7 +50,8 @@ header {
     margin: 2em auto 2em 25%;
 }
 
-h1, .subhead {
+h1,
+.subhead {
     position: relative;
     z-index: 3;
 }
@@ -59,7 +68,7 @@ h1, .subhead {
     padding: 4em 0 2em;
     border-top-left-radius: 40px;
     transform: skewY(-2deg);
-    
+
 }
 
 .blue-container:before {
@@ -72,6 +81,7 @@ h1, .subhead {
     right: 0;
     z-index: -2;
 }
+
 .blue-container:after {
     content: "";
     width: 80px;
@@ -139,6 +149,12 @@ h2 {
     font-size: 1.5em;
     margin: 3% auto 7%;
     z-index: 4;
+    max-width: 340px;
+    border: 1px solid #000;
+}
+
+.cta-container {
+    margin-bottom: 100px;
 }
 
 .footer-container {
@@ -169,7 +185,7 @@ h2 {
     content: "";
     width: 80px;
     height: 80px;
-    background-color: 00cc80;
+    background-color: #00cc80;
     position: absolute;
     top: -80px;
     left: 0;
@@ -196,7 +212,7 @@ nav ul {
     top: 0;
     right: 0;
     text-align: left;
-    background: rgb(36,41,44);
+    background: rgb(36, 41, 44);
     height: 100%;
     z-index: 7;
     padding: 3em;
@@ -208,12 +224,13 @@ nav ul li a {
     display: block;
     width: 100%;
     padding: 1em 2em;
-    background-color: rgb(49,55,59);
+    background-color: rgb(49, 55, 59);
 }
 
 nav ul li a:hover {
-    background-color:  rgb(65,73,78)
+    background-color: rgb(65, 73, 78)
 }
+
 .exit-btn {
     margin-bottom: 1em;
     margin-top: -1.3em;
@@ -265,19 +282,20 @@ nav ul li a:hover {
         align-items: center;
     }
 
-    .blue-container ul li{
+    .blue-container ul li {
         margin-bottom: 0;
     }
+
     .blue-container ul li p {
         padding: 0 .8px;
     }
 
-    .gray-container ul{
+    .gray-container ul {
         display: flex;
     }
 
     nav ul {
-        width: 40%;  
+        width: 40%;
     }
 }
 
@@ -307,7 +325,7 @@ nav ul li a:hover {
 
     .show-desktop {
         display: block;
-        margin: 0 auto 13% auto;
+        /* margin: 0 auto 13% auto; */
     }
 
     .hide-desktop {
@@ -339,38 +357,40 @@ nav ul li a:hover {
     }
 
     .scroll {
-        width:  30px;
+        width: 30px;
         animation: move 1s infinite alternate;
+        margin: 0 auto;
+        padding: 40px;
     }
 
     @keyframes move {
         0% {
             transform: translateY(0px);
         }
+
         100% {
             transform: translateY(20px);
         }
-        
+
     }
 
-}   
+}
 
 @media only screen and (min-width: 1600px) {
-    
+
     .server {
         width: 40%;
         margin: 5em auto 4em 15%;
     }
 
-    .container {
-        width: 70%;
-    }
+
 
     .blue-container {
         padding: 7em 0 2em;
     }
 
-    .blue-container ul li p, blockquote {
+    .blue-container ul li p,
+    blockquote {
         font-size: 1.3em;
     }
 
@@ -389,5 +409,78 @@ nav ul li a:hover {
     .blue-container ul li:nth-child(3) img {
         width: 8%;
         margin-top: -4px;
+    }
+}
+
+/* top navigation */
+
+.topnav {
+    background-color: #00c2ff;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.right-menu {
+    float: right !important;
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 16px;
+    text-shadow: 2px 2px 2px rgba(206, 89, 55, 0);
+}
+
+#myTopnav>a.icon>i {
+    font-size: 42px;
+    color: #000;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    /* background-color: #4CAF50; */
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
     }
 }
